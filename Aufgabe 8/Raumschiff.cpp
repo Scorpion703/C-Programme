@@ -53,13 +53,16 @@ void Raumschiff::angriff(Raumschiff& raumschiff){
 	// while() ist blödsinn die funktion soll nur einmal aufgerufen werden und dann rekursiv
 	if (this->getLeben() >= 0 && raumschiff.getLeben() >= 0 && this->getGesamtMunition() > 0 && raumschiff.getGesamtMunition() > 0){
 		this->munitionReduzieren();
-		this->verteidigen(raumschiff);
+		//this->verteidigen(raumschiff);
+		raumschiff.verteidigen(*this);
 	}
 }
 
 void Raumschiff::verteidigen(Raumschiff& verteidiger){
 	// wenn die schlagkraft geringer ist als der schutz derpanzerung macht es kein sind das leben zu reduzieren, da die panzerung den schaden auf null fallen läst
-	if (this->getGesamtSchlagkraft() > verteidiger.getPanzerung()->getSchutz()) verteidiger.setLeben(verteidiger.getLeben() - (this->getGesamtSchlagkraft() - verteidiger.getPanzerung()->getSchutz()));
+	if (this->getGesamtSchlagkraft() > verteidiger.getPanzerung()->getSchutz()) 
+		verteidiger.setLeben(verteidiger.getLeben() - (this->getGesamtSchlagkraft() - verteidiger.getPanzerung()->getSchutz()));
+	
 	cout << this->toString() << endl;
 	cout << verteidiger.toString() << endl;
 	this->angriff(verteidiger);
