@@ -34,7 +34,13 @@ int Raumschiff::getLeben() const {
 }
 
 void Raumschiff::setPanzerung(Panzerung *panzer) {
-	this->panzer = panzer;
+	if (this->panzer == NULL) this->panzer = new Panzerung(panzer->getName(), panzer->getSchutz(), panzer->getKosten());
+	else {
+		this->panzer->setKosten(panzer->getKosten());
+		this->panzer->setName(panzer->getName());
+		this->panzer->setSchutz(panzer->getSchutz());
+	}
+	// this->panzer = panzer;
 }
 void Raumschiff::setLeben(int leben) {
 	this->leben = leben;

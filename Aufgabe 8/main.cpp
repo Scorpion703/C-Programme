@@ -39,7 +39,6 @@ int main(int argc, const char* argv[])
 		b.angriff(a);
 		cout << "-----Spieler----- \n" << a.toString() << endl;
 		cout << "-----Computer---- \n" << b.toString() << endl;
-		system("CLS");
 	}
 
 	system("pause");
