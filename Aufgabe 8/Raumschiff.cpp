@@ -53,8 +53,10 @@ void Raumschiff::angriff(Raumschiff& raumschiff){
 	this->verteidigen(raumschiff);
 	this->munitionReduzieren();
 }
-void Raumschiff::verteidigen(Raumschiff& verteidigen){
-	verteidigen.setLeben(verteidigen.getLeben() - (this->getGesamtSchlagkraft() - verteidigen.getPanzerung()->getSchutz()));
+
+void Raumschiff::verteidigen(Raumschiff& verteidiger){
+	verteidiger.setLeben(verteidiger.getLeben() - (this->getGesamtSchlagkraft() - verteidiger.getPanzerung()->getSchutz()));
+	//verteidiger.angriff(const_cast<Raumschiff&>(*this)); WTTFFFFFF
 }
 
 void Raumschiff::munitionReduzieren(){
