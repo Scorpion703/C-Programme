@@ -50,13 +50,17 @@ void Raumschiff::addWaffe(const Waffe waffe) {
 }
 
 void Raumschiff::angriff(Raumschiff& raumschiff){
-	this->verteidigen(raumschiff);
-	this->munitionReduzieren();
+	while (this->getLeben() >= 0 && raumschiff.getLeben() >= 0){
+		this->verteidigen(raumschiff);
+		this->munitionReduzieren();
+	}
 }
 
 void Raumschiff::verteidigen(Raumschiff& verteidiger){
 	verteidiger.setLeben(verteidiger.getLeben() - (this->getGesamtSchlagkraft() - verteidiger.getPanzerung()->getSchutz()));
-	//verteidiger.angriff(const_cast<Raumschiff&>(*this)); WTTFFFFFF
+	this->angriff(verteidiger);
+	cout << this->toString() << endl;
+	cout << verteidiger.toString() << endl;
 }
 
 void Raumschiff::munitionReduzieren(){
@@ -80,6 +84,6 @@ Raumschiff Raumschiff::operator=(const Raumschiff& raumschiff) {
 //Andere Methoden
 string Raumschiff::toString() {
 	stringstream ss;
-	ss << "Leben: " << this->getLeben() << "\nInsges. Schaden: " << this->getGesamtSchlagkraft();
+	ss << "Leben: " << this->getLeben() << "\nInsges. Schaden: " << this->getGesamtSchlagkraft() << "\n" << this->panzer->toString() << endl;
 	return ss.str();
 }

@@ -26,21 +26,21 @@ int main(int argc, const char* argv[])
 {
 	string s = "Spieler";
 	string p = "Schiffrumpf";
-	Raumschiff a = Raumschiff(1250, new Panzerung(p, 0, 100));
+	Raumschiff a = Raumschiff(1250, new Panzerung(p, 50, 100));
 	a.addWaffe(Waffe("Todesstrahl", 100, 10000, 1500));
 	s = "Spieler2";
-	Raumschiff b = Raumschiff(1000, new Panzerung(p, 0, 100));
+	Raumschiff b = Raumschiff(1000, new Panzerung(p, 25, 100));
 	b.addWaffe(Waffe("Todesstrahl", 100, 10000, 1500));
 
-	while (!ende(a, b)){
+	//while (!ende(a, b)){
 		a.angriff(b);
-		cout << "-----Spieler----- \n" << a.toString() << endl;
-		cout << "-----Computer---- \n" << b.toString() << endl;
-		b.angriff(a);
-		cout << "-----Spieler----- \n" << a.toString() << endl;
-		cout << "-----Computer---- \n" << b.toString() << endl;
-		cout << "\n+----------------------------------------------+\n" << endl;
-	}
+	//	cout << "-----Spieler----- \n" << a.toString() << endl;
+	//	cout << "-----Computer---- \n" << b.toString() << endl;
+	//	b.angriff(a);
+	//	cout << "-----Spieler----- \n" << a.toString() << endl;
+	//	cout << "-----Computer---- \n" << b.toString() << endl;
+	//	cout << "\n+----------------------------------------------+\n" << endl;
+	//}
 
 	system("pause");
 }
