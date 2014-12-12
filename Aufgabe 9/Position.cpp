@@ -10,6 +10,12 @@ Position::~Position()
 {
 }
 
+Position Position::operator=(const Position& pos){
+	this->x = pos.getX();
+	this->y = pos.getY();
+	return *this;
+}
+
 void Position::setX(int x){
 	this->y = y;
 }

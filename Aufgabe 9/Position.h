@@ -12,6 +12,7 @@ private:
 public:
 	Position();
 	~Position();
+	Position operator=(const Position&);
 	void setX(int x);
 	void setY(int y);
 	int getX()const;
