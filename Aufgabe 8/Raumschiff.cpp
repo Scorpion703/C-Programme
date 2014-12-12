@@ -4,8 +4,17 @@ using namespace std;
 
 // Konstruktoren und Destruktor
 Raumschiff::Raumschiff(int leben, Panzerung* panzer) : leben(leben) {
-	this->panzer = new Panzerung(panzer->getName(), panzer->getSchutz(), panzer->getKosten());
+	this->setGeld(3000);
+	this->leben = leben;
+	this->setPanzerung(panzer);
 }
+
+Raumschiff::Raumschiff(int leben, int geld, Panzerung* panzer) : leben(leben) {
+	this->geld = geld;
+	this->leben = leben;
+	this->setPanzerung(panzer);
+}
+
 Raumschiff::Raumschiff(const Raumschiff& raumschiff) {
 	this->operator=(raumschiff);
 }
@@ -34,8 +43,15 @@ int Raumschiff::getLeben() const {
 }
 
 void Raumschiff::setPanzerung(Panzerung *panzer) {
-	if (this->panzer == NULL) this->panzer = new Panzerung(panzer->getName(), panzer->getSchutz(), panzer->getKosten());
-	else {
+	if (this->panzer == NULL){ 
+		if (this->getGeld() >= panzer->getKosten()){
+			this->setGeld(this->getGeld() - panzer->getKosten());
+			this->panzer = new Panzerung(panzer->getName(), panzer->getSchutz(), panzer->getKosten());
+		}
+		else{
+			cout << "Panzer kauf nicht moeglich, nicht genug Geld!" << endl;
+		}
+	}else {
 		this->panzer->setKosten(panzer->getKosten());
 		this->panzer->setName(panzer->getName());
 		this->panzer->setSchutz(panzer->getSchutz());
@@ -46,7 +62,13 @@ void Raumschiff::setLeben(int leben) {
 	this->leben = leben;
 }
 void Raumschiff::addWaffe(const Waffe waffe) {
-	this->waffen.push_back(waffe);
+	if (this->getGeld() >= waffe.getKosten()){
+		this->setGeld(this->getGeld() - waffe.getKosten());
+		this->waffen.push_back(waffe);
+	}
+	else{
+		cout << "Sie haben nicht genug Geld um sich eine weitere Waffe zu kaufen!" << endl;
+	}
 }
 
 void Raumschiff::angriff(Raumschiff& raumschiff){
@@ -89,6 +111,17 @@ Raumschiff Raumschiff::operator=(const Raumschiff& raumschiff) {
 //Andere Methoden
 string Raumschiff::toString() {
 	stringstream ss;
-	ss << "Leben: " << this->getLeben() << "\nInsges. Schaden: " << this->getGesamtSchlagkraft() << "\n" << this->panzer->toString() << endl;
+	ss	<< "Leben: " << this->getLeben()
+		<< "\nInsges. Schaden: " << this->getGesamtSchlagkraft()
+		<< "\nGeld: " << this->getGeld() 
+		<< "\n" << this->panzer->toString() << endl;
 	return ss.str();
+}
+
+void Raumschiff::setGeld(int geld){
+	this->geld = geld;
+}
+
+int Raumschiff::getGeld() const{
+	return this->geld;
 }

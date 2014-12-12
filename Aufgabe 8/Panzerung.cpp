@@ -39,6 +39,12 @@ void Panzerung::setName(string& name){
 	this->name = name;
 }
 
+// Berechnung des Schutzes in abhängigkeit des Preises
+// zB kostet er 500 dann hat man zB 1500 Schutz
+void Panzerung::setSchutz(double faktor){
+	this->schutz = this->getKosten()*faktor;
+}
+
 void Panzerung::setSchutz(int schutz){
 	this->schutz = schutz;
 }

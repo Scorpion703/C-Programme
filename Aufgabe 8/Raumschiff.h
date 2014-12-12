@@ -12,10 +12,12 @@ private:
 	Panzerung *panzer;
 	std::vector<Waffe> waffen;
 	int leben;
+	int geld;
 public:
 	// Konstruktoren und Destruktor
 	Raumschiff() : leben(100), panzer(NULL){ waffen.reserve(10); }
 	Raumschiff(int leben, Panzerung* panzer);
+	Raumschiff(int leben, int geld, Panzerung* panzer);
 	Raumschiff(const Raumschiff&);
 	virtual ~Raumschiff() { delete panzer; };
 
@@ -23,14 +25,19 @@ public:
 	Panzerung* getPanzerung() const;
 	Waffe getWaffen();
 	int getLeben() const;
+	int getGeld() const;
 	// hilfs Methode zur berechnung des Schadens des Schiffes
 	int getGesamtSchlagkraft() const;
 	int Raumschiff::getGesamtMunition() const;
 
 	void setPanzerung(Panzerung *panzer);
 	void setLeben(int leben);
+
+	void setGeld(int geld);
+
 	void addWaffe(const Waffe waffe);
 	void munitionReduzieren();
+	
 
 	void angriff(Raumschiff& raumschiff);
 	void verteidigen(Raumschiff& verteidigen);

@@ -25,6 +25,7 @@ class Panzerung {
 		void setName(std::string& name);
 		void setSchutz(int schutz);
 		void setKosten(int kosten);
+		void setSchutz(double faktor);
 
 		//Opperatoren ueberschreiben
 		Panzerung operator=(const Panzerung& raumschiff);
