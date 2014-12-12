@@ -1,8 +1,14 @@
 #pragma once
-#include <string.h>
+#include <string>
+#include <stdlib.h>
+#include <iostream>
+#include <sstream>
 
 class Position
 {
+private:
+	int x;
+	int y; 
 public:
 	Position();
 	~Position();
@@ -11,10 +17,6 @@ public:
 	int getX()const;
 	int getY() const;
 
-	virtual std::string toString();
-private:
-	int x;
-	int y; 
-
+	std::string toString();
 };
 
