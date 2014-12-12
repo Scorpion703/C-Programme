@@ -6,7 +6,7 @@ using namespace std;
 // Konstruktoren und Destruktor
 
 
-Panzerung::Panzerung(std::string name, int schutz, int kosten){
+Panzerung::Panzerung(string name, int schutz, int kosten){
 	this->name = name;
 	this->schutz = schutz;
 	this->kosten = kosten;
@@ -64,7 +64,7 @@ Panzerung Panzerung::operator=(const Panzerung& panzerung){
 //Andere Methoden
 string Panzerung::toString(){
 	stringstream ss;
-	ss << "\n\n#####Panzerung#####\n" <<
+	ss << "\n\n-----Panzerung-----\n" <<
 		"\nName: " << this->getName() <<
 		"\nSchutz: " << this->getSchutz() <<
 		"\nKosten: " << this->getKosten() << "$" <<endl;

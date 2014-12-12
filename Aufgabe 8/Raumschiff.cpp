@@ -4,12 +4,14 @@ using namespace std;
 
 // Konstruktoren und Destruktor
 Raumschiff::Raumschiff(int leben, Panzerung* panzer) : leben(leben) {
-	this->setGeld(3000);
+	this->name = "WiesoGehtDasNicht";
+	this->geld = 3000;
 	this->leben = leben;
 	this->setPanzerung(panzer);
 }
 
 Raumschiff::Raumschiff(int leben, int geld, Panzerung* panzer) : leben(leben) {
+	this->name = "testname";
 	this->geld = geld;
 	this->leben = leben;
 	this->setPanzerung(panzer);
@@ -111,10 +113,13 @@ Raumschiff Raumschiff::operator=(const Raumschiff& raumschiff) {
 //Andere Methoden
 string Raumschiff::toString() {
 	stringstream ss;
-	ss	<< "Leben: " << this->getLeben()
-		<< "\nInsges. Schaden: " << this->getGesamtSchlagkraft()
+	ss << "<--------_RAUMSCHIFF_---------->"
+		<< "\nName: " << this->getName()
+		<< "\nLeben: " << this->getLeben()
+		<< "\nSchaden: " << this->getGesamtSchlagkraft()
 		<< "\nGeld: " << this->getGeld() 
-		<< "\n" << this->panzer->toString() << endl;
+		<< this->panzer->toString() 
+		<< "\n<------------------------------>"<< endl;
 	return ss.str();
 }
 
@@ -124,4 +129,12 @@ void Raumschiff::setGeld(int geld){
 
 int Raumschiff::getGeld() const{
 	return this->geld;
+}
+
+void Raumschiff::setName(string name){
+	this->name = name;
+}
+
+string Raumschiff::getName()const{
+	return this->name;
 }

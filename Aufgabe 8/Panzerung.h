@@ -13,7 +13,7 @@ class Panzerung {
 	public:
 		// Konstruktoren und Destruktor
 		Panzerung() : name(""), schutz(0),kosten(0){}; 
-		Panzerung(std::string name,int schutz, int kosten);
+		Panzerung(std::string name, int schutz, int kosten);
 		Panzerung(const Panzerung& panzerung);
 		virtual ~Panzerung();
 

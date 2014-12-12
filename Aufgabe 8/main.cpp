@@ -22,6 +22,27 @@ bool ende(Raumschiff& a, Raumschiff& b){
 	}
 }
 
+void auswertung(Raumschiff& a, Raumschiff& b){
+	if (a.getLeben() > 0 && b.getLeben() <= 0 || a.getGesamtMunition() > 0 && b.getGesamtMunition() <= 0){
+		cout << "\n\nRaumschiff " << a.getName() << " hat gewonnen!\n" << endl;
+		a.setGeld(a.getGeld() + b.getGeld());
+		b.setGeld(0);
+
+		//HIER NOCH SCHIDLE RÜBERSCHAUFELN
+	}
+	else{
+		cout << "\n\nRaumschiff " << b.getName() << " hat gewonnen!\n" << endl;
+		b.setGeld(b.getGeld() + a.getGeld());
+		a.setGeld(0);
+
+		//HIER NOCH SCHIDLE RÜBERSCHAUFELN
+	}
+
+	cout << "\n" << endl;
+	cout << a.toString();
+	cout << b.toString();
+}
+
 int main(int argc, const char* argv[])
 {
 	string s = "Spieler";
@@ -41,6 +62,7 @@ int main(int argc, const char* argv[])
 	//	cout << "-----Computer---- \n" << b.toString() << endl;
 	//	cout << "\n+----------------------------------------------+\n" << endl;
 	//}
-
+	system("pause");
+	auswertung(a, b);
 	system("pause");
 }
