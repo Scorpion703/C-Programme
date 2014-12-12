@@ -4,14 +4,14 @@ using namespace std;
 
 // Konstruktoren und Destruktor
 Raumschiff::Raumschiff(int leben, Panzerung* panzer) : leben(leben) {
-	this->name = "WiesoGehtDasNicht";
+	this->name = "";
 	this->geld = 3000;
 	this->leben = leben;
 	this->setPanzerung(panzer);
 }
 
 Raumschiff::Raumschiff(int leben, int geld, Panzerung* panzer) : leben(leben) {
-	this->name = "testname";
+	this->name = "";
 	this->geld = geld;
 	this->leben = leben;
 	this->setPanzerung(panzer);
@@ -100,6 +100,7 @@ void Raumschiff::munitionReduzieren(){
 
 //Opperatoren ueberschreiben
 Raumschiff Raumschiff::operator=(const Raumschiff& raumschiff) {
+	this->geld = raumschiff.getGeld();
 	this->leben = raumschiff.getLeben();
 	if (raumschiff.panzer != NULL) this->setPanzerung(raumschiff.getPanzerung());
 	if (raumschiff.waffen.size() != 0) {

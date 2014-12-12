@@ -52,17 +52,12 @@ int main(int argc, const char* argv[])
 	s = "Spieler2";
 	Raumschiff b = Raumschiff(1000, new Panzerung(p, 25, 100));
 	b.addWaffe(Waffe("Todesstrahl", 100, 10000, 1500));
-
-	//while (!ende(a, b)){
-		a.angriff(b);
-	//	cout << "-----Spieler----- \n" << a.toString() << endl;
-	//	cout << "-----Computer---- \n" << b.toString() << endl;
-	//	b.angriff(a);
-	//	cout << "-----Spieler----- \n" << a.toString() << endl;
-	//	cout << "-----Computer---- \n" << b.toString() << endl;
-	//	cout << "\n+----------------------------------------------+\n" << endl;
-	//}
+	
+	//rekursion
+	a.angriff(b);
+	
 	system("pause");
 	auswertung(a, b);
 	system("pause");
+	return 0;
 }
