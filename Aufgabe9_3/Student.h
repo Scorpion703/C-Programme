@@ -8,7 +8,7 @@ private:
 	int matrNr;
 public:
 	Student();
-	Student::Student(string name, string nachname, int matrNr);
+	Student::Student(std::string name, std::string nachname, int matrNr);
 	~Student();
 	void setMatrNr(int matrNr);
 	int getMatrNr();

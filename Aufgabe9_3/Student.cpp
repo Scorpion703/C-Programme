@@ -2,16 +2,13 @@
 
 using namespace std;
 
-Student::Student()
+Student::Student() : Person("S_Max", "S_Mustermann")
 {
-	this->setName("Student_Max");
-	this->setNachname("Student_Mustermann");
 	this->matrNr = 0001;
 }
 
-Student::Student(string name, string nachname, int matrNr) {
-	this->setName(name);
-	this->setNachname(nachname);
+Student::Student(string name, string nachname, int matrNr) :
+Person(name, nachname){
 	this->matrNr = matrNr;
 }
 
@@ -29,6 +26,6 @@ int Student::getMatrNr(){
 string Student::toString(){
 	stringstream ss;
 	ss << "Name: " << this->getName() << "\nNachname: " << this->getNachname() <<
-		"MatNr: " << this->getMatrNr() << endl;
+		"\nMatNr: " << this->getMatrNr() << endl;
 	return ss.str();
 }
