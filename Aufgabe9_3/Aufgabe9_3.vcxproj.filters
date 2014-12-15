@@ -15,45 +15,33 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="GeoObject.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="Linie.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="Position.cpp">
+    <ClCompile Include="Person.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="Punkt.cpp">
+    <ClCompile Include="Student.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="Rechteck.cpp">
+    <ClCompile Include="Angestellter.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="Kreis.cpp">
+    <ClCompile Include="Hiwi.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="GeoObject.h">
+    <ClInclude Include="Person.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="Linie.h">
+    <ClInclude Include="Student.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="Position.h">
+    <ClInclude Include="Angestellter.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="Punkt.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="Rechteck.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="Kreis.h">
+    <ClInclude Include="Hiwi.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>

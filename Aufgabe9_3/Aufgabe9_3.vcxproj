@@ -11,8 +11,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{A320DAA2-9A78-4F60-BF10-C6F14BC3976A}</ProjectGuid>
-    <RootNamespace>Aufgabe9</RootNamespace>
+    <ProjectGuid>{E0D3079E-F081-4680-9817-CD086211407F}</ProjectGuid>
+    <RootNamespace>Aufgabe9_3</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -64,21 +64,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="GeoObject.cpp" />
-    <ClCompile Include="Kreis.cpp" />
-    <ClCompile Include="Linie.cpp" />
+    <ClCompile Include="Angestellter.cpp" />
+    <ClCompile Include="Hiwi.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Position.cpp" />
-    <ClCompile Include="Punkt.cpp" />
-    <ClCompile Include="Rechteck.cpp" />
+    <ClCompile Include="Person.cpp" />
+    <ClCompile Include="Student.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="GeoObject.h" />
-    <ClInclude Include="Kreis.h" />
-    <ClInclude Include="Linie.h" />
-    <ClInclude Include="Position.h" />
-    <ClInclude Include="Punkt.h" />
-    <ClInclude Include="Rechteck.h" />
+    <ClInclude Include="Angestellter.h" />
+    <ClInclude Include="Hiwi.h" />
+    <ClInclude Include="Person.h" />
+    <ClInclude Include="Student.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
