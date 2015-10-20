@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Bootstrap Case</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<style>
+	div.button1 {
+		background: #000;
+		margin: 0px;
+		width: 100%;
+		height: 240px;
+		display: none;
+		color: #fff;
+	}
+
+	.month {
+		display:none;
+	}
+	</style>
+</head>
+<body>
+
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">WebSiteName</a>
+			</div>
+			<div>
+				<ul class="nav navbar-nav">
+					<li><a href="#" class="active month_button" id="januar">Janurar</a></li>
+					<li><a href="#" class="month_button" id="februar">Februar</a></li>
+					<li><a href="#" class="month_button">Maerz</a></li>
+					<li><a href="#" class="month_button">April</a></li>
+					<li><a href="#" class="month_button">Mai</a></li>
+					<li><a href="#" class="month_button">Juni</a></li>
+					<li><a href="#" class="month_button">Juli</a></li>
+					<li><a href="#" class="month_button">August</a></li>
+					<li><a href="#" class="month_button">September</a></li>
+					<li><a href="#" class="month_button">Oktober</a></li>
+					<li><a href="#" class="month_button">November</a></li>
+					<li><a href="#" class="month_button" id="dezember">Dezember</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<script>
+	$(document).ready(function( ){
+		$('.month_button').click(function () {
+			$('.month_button').removeClass('active');
+			$(this).addClass('active');
+			$('.month').hide();
+			$('#container_'+$(this).attr('id')).show();
+		});
+
+
+
+		
+
+	});
+	</script>
+
+	<div class="container month" id="container_januar">
+		<h3>Januar</h3>
+		<p>Das sind die News vom Januar!</p>
+		<button type="button" class="btn btn-success btn-block" id = "button1">Button 1</button>
+		<div class = "button1">Hallo Welt</div>
+		<button type="button" class="btn btn-success btn-block" id = "button2">Button 1</button>
+		<button type="button" class="btn btn-success btn-block" id = "button3">Button 1</button>
+		<button type="button" class="btn btn-success btn-block" id = "button4">Button 1</button>
+		<script>
+			$('#button1').click(function () {
+				if ( $( "div.button1" ).is( ":hidden" ) ) {
+					$( "div.button1" ).slideDown( "slow" );
+				} else {
+					$("div.button1").slideUp("slow");
+				}
+			});
+		</script>
+	</div>
+	<div class="container month" id="container_februar">
+		<h3>Februar</h3>
+		<p>Das sind die News vom Januar!</p>
+		<button type="button" class="btn btn-success btn-block" id = "button1">Button 1</button>
+		<div class = "button1">Hallo Welt</div>
+		<button type="button" class="btn btn-success btn-block" id = "button2">Button 1</button>
+		<button type="button" class="btn btn-success btn-block" id = "button3">Button 1</button>
+		<button type="button" class="btn btn-success btn-block" id = "button4">Button 1</button>
+		<script>
+			$('#button1').click(function () {
+				if ( $( "div.button1" ).is( ":hidden" ) ) {
+					$( "div.button1" ).slideDown( "slow" );
+				} else {
+					$("div.button1").slideUp("slow");
+				}
+			});
+		</script>
+	</div>
+
+</body>
+</html>
